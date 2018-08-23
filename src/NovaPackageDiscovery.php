@@ -11,7 +11,7 @@ class NovaPackageDiscovery extends Card
      *
      * @var string
      */
-    public $width = '1/3';
+    public $width = 'full'; // @todo: Make it smaller and figure the size later
 
     /**
      * Get the component name for the element.

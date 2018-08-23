@@ -1,11 +1,12 @@
 <template>
-    <card class="">
+    <card class="testing">
         <div class="px-3 py-3">
             <h1 class="text-center text-sm text-80 uppercase">NovaPackages.com</h1>
             <h2 class="text-base mt-4">Recent packages</h2>
             <ul>
                 <li v-for="package in recentPackages" class="text-sm">
-                    {{ package.name }}
+                    <a :href="package.url">{{ package.name }}</a> - [{{ package.created_at }}]
+                    <!-- @todo get the novapackages.com URL and link it here -->
                 </li>
             </ul>
 

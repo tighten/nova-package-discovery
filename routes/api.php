@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Zttp\Zttp;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('recent-packages', function (Request $request) {
-    return response()->json([
-        ['name' => 'My Best Package Now!'],
-    ]);
+    $response = Zttp::get('https://novapackages.com/api/recent');
+
+    return response()->json($response->json()['data']);
 });
 
 Route::get('popular-packages', function (Request $request) {
