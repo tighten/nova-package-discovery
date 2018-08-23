@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 use Zttp\Zttp;
 
@@ -16,9 +17,12 @@ use Zttp\Zttp;
 */
 
 Route::get('recent-packages', function (Request $request) {
-    $response = Zttp::get('https://novapackages.com/api/recent');
+    $data = Cache::remember('tightenco-nova-packages::recent', 60, function () {
+        $response = Zttp::get('https://novapackages.com/api/recent');
+        return $response->json()['data'];
+    });
 
-    return response()->json($response->json()['data']);
+    return response()->json($data);
 });
 
 Route::get('popular-packages', function (Request $request) {
