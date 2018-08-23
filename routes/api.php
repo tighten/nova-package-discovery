@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/endpoint', function (Request $request) {
-//     //
-// });
+Route::get('recent-packages', function (Request $request) {
+    return response()->json([
+        ['name' => 'My Best Package Now!'],
+    ]);
+});
+
+Route::get('popular-packages', function (Request $request) {
+    return response()->json([
+        ['name' => 'Your Best Package Now!'],
+    ]);
+});
