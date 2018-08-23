@@ -1,17 +1,17 @@
 <template>
-    <card class="testing">
+    <card>
         <div class="px-3 py-3">
             <h1 class="text-center text-sm text-80 uppercase">NovaPackages.com</h1>
             <h2 class="text-base mt-4">Recent packages</h2>
-            <ul>
+            <ul class="leading-normal">
                 <li v-for="package in recentPackages" class="text-sm">
-                    <a :href="package.url">{{ package.name }}</a> - [{{ package.created_at }}]
+                    <a :href="package.url">{{ package.name }}</a> - <span class="text-70 italic">{{ humanTime(package.created_at) }}</span>
                     <!-- @todo get the novapackages.com URL and link it here -->
                 </li>
             </ul>
 
             <h2 class="text-base mt-4">Popular packages</h2>
-            <ul>
+            <ul class="leading-normal">
                 <li v-for="package in popularPackages" class="text-sm">
                     {{ package.name }}
                 </li>
@@ -29,6 +29,15 @@ export default {
             recentPackages: [],
             popularPackages: [],
         };
+    },
+
+    methods: {
+        humanTime: function(string) {
+            if (string) {
+                return moment.utc(string).fromNow();
+            }
+            return 'Nothing yet.';
+        },
     },
 
     mounted() {

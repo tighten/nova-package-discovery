@@ -274,6 +274,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
 
+    methods: {
+        humanTime: function humanTime(string) {
+            if (string) {
+                return moment.utc(string).fromNow();
+            }
+            return 'Nothing yet.';
+        }
+    },
+
     mounted: function mounted() {
         var _this = this;
 
@@ -295,7 +304,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("card", { staticClass: "testing" }, [
+  return _c("card", [
     _c("div", { staticClass: "px-3 py-3" }, [
       _c("h1", { staticClass: "text-center text-sm text-80 uppercase" }, [
         _vm._v("NovaPackages.com")
@@ -305,12 +314,16 @@ var render = function() {
       _vm._v(" "),
       _c(
         "ul",
+        { staticClass: "leading-normal" },
         _vm._l(_vm.recentPackages, function(package) {
           return _c("li", { staticClass: "text-sm" }, [
             _c("a", { attrs: { href: package.url } }, [
               _vm._v(_vm._s(package.name))
             ]),
-            _vm._v(" - [" + _vm._s(package.created_at) + "]\n                ")
+            _vm._v(" - "),
+            _c("span", { staticClass: "text-70 italic" }, [
+              _vm._v(_vm._s(_vm.humanTime(package.created_at)))
+            ])
           ])
         })
       ),
@@ -319,6 +332,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "ul",
+        { staticClass: "leading-normal" },
         _vm._l(_vm.popularPackages, function(package) {
           return _c("li", { staticClass: "text-sm" }, [
             _vm._v(
