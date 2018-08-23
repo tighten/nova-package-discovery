@@ -3,6 +3,9 @@
 WE'RE DOING IT LIVE
  (on Twitch)
  
+ ![Screenshot of the plugin](https://user-images.githubusercontent.com/151829/44536413-656c4880-a6ca-11e8-848c-b881b0c765ba.png)
+
+ 
  ## Installation
 
 You can install the package in to a Laravel app that uses [Nova](https://nova.laravel.com) via composer:
