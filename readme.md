@@ -3,7 +3,7 @@
 WE'RE DOING IT LIVE
  (on Twitch)
  
-<img width="461" alt="image" src="https://user-images.githubusercontent.com/151829/44618486-aee0a300-a844-11e8-83b9-825c23f6cb9b.png">
+<img width="474" alt="image" src="https://user-images.githubusercontent.com/151829/44622253-14538480-a883-11e8-896c-55b08a5c1280.png">
 
  
  ## Installation
