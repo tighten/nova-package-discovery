@@ -714,11 +714,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("card", [
     _c("div", { staticClass: "px-3 py-3" }, [
-      _c("h1", { staticClass: "text-center text-sm text-80 uppercase" }, [
+      _c("h1", { staticClass: "text-sm text-80 uppercase float-right" }, [
         _vm._v("NovaPackages.com")
       ]),
       _vm._v(" "),
-      _c("div", [
+      _c("div", { staticClass: "uppercase text-sm" }, [
         _c(
           "a",
           {
@@ -775,12 +775,11 @@ var render = function() {
               value: _vm.tab === "recent",
               expression: "tab === 'recent'"
             }
-          ]
+          ],
+          staticClass: "mt-4"
         },
         [
-          _c("h2", { staticClass: "text-base mt-4" }, [
-            _vm._v("Recent packages")
-          ]),
+          _c("h2", { staticClass: "text-base" }, [_vm._v("Recent packages")]),
           _vm._v(" "),
           _c(
             "ul",
@@ -810,12 +809,11 @@ var render = function() {
               value: _vm.tab === "popular",
               expression: "tab === 'popular'"
             }
-          ]
+          ],
+          staticClass: "mt-4"
         },
         [
-          _c("h2", { staticClass: "text-base mt-4" }, [
-            _vm._v("Popular packages")
-          ]),
+          _c("h2", { staticClass: "text-base" }, [_vm._v("Popular packages")]),
           _vm._v(" "),
           _c(
             "ul",
@@ -845,7 +843,8 @@ var render = function() {
               value: _vm.tab === "stats",
               expression: "tab === 'stats'"
             }
-          ]
+          ],
+          staticClass: "mt-4"
         },
         [
           _vm._v("\n            Number of packages: @todo"),
