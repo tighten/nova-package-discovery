@@ -1,12 +1,12 @@
 <template>
     <card>
         <div class="px-3 py-3">
-            <h1 class="text-sm text-80 uppercase float-right">NovaPackages.com</h1>
+            <h1 class="text-xs text-60 uppercase float-right">NovaPackages.com</h1>
 
-            <div class="uppercase text-sm">
-                <a href="#" @click.prevent="selectTab('recent')" :class="{'font-bold': tab === 'recent'}">Recent</a> |
-                <a href="#" @click.prevent="selectTab('popular')" :class="{'font-bold': tab === 'popular'}">Popular</a> |
-                <a href="#" @click.prevent="selectTab('stats')" :class="{'font-bold': tab === 'stats'}">Stats</a>
+            <div class="uppercase text-sm border-b border-60">
+                <a href="#" class="px-2 py-2 inline-block no-underline text-90 hover:bg-30" @click.prevent="selectTab('recent')" :class="{'font-bold': tab === 'recent'}">Recent</a>
+                <a href="#" class="px-2 py-2 inline-block no-underline text-90 hover:bg-30" @click.prevent="selectTab('popular')" :class="{'font-bold': tab === 'popular'}">Popular</a>
+                <a href="#" class="px-2 py-2 inline-block no-underline text-90 hover:bg-30" @click.prevent="selectTab('stats')" :class="{'font-bold': tab === 'stats'}">Stats</a>
             </div>
 
             <div v-show="tab === 'recent'" class="mt-4">

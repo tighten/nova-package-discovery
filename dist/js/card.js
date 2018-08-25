@@ -714,14 +714,16 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("card", [
     _c("div", { staticClass: "px-3 py-3" }, [
-      _c("h1", { staticClass: "text-sm text-80 uppercase float-right" }, [
+      _c("h1", { staticClass: "text-xs text-60 uppercase float-right" }, [
         _vm._v("NovaPackages.com")
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "uppercase text-sm" }, [
+      _c("div", { staticClass: "uppercase text-sm border-b border-60" }, [
         _c(
           "a",
           {
+            staticClass:
+              "px-2 py-2 inline-block no-underline text-90 hover:bg-30",
             class: { "font-bold": _vm.tab === "recent" },
             attrs: { href: "#" },
             on: {
@@ -733,10 +735,12 @@ var render = function() {
           },
           [_vm._v("Recent")]
         ),
-        _vm._v(" |\n            "),
+        _vm._v(" "),
         _c(
           "a",
           {
+            staticClass:
+              "px-2 py-2 inline-block no-underline text-90 hover:bg-30",
             class: { "font-bold": _vm.tab === "popular" },
             attrs: { href: "#" },
             on: {
@@ -748,10 +752,12 @@ var render = function() {
           },
           [_vm._v("Popular")]
         ),
-        _vm._v(" |\n            "),
+        _vm._v(" "),
         _c(
           "a",
           {
+            staticClass:
+              "px-2 py-2 inline-block no-underline text-90 hover:bg-30",
             class: { "font-bold": _vm.tab === "stats" },
             attrs: { href: "#" },
             on: {
