@@ -3,7 +3,7 @@
 WE'RE DOING IT LIVE
  (on Twitch)
  
- ![Screenshot of the plugin](https://user-images.githubusercontent.com/151829/44536413-656c4880-a6ca-11e8-848c-b881b0c765ba.png)
+<img width="461" alt="image" src="https://user-images.githubusercontent.com/151829/44618486-aee0a300-a844-11e8-83b9-825c23f6cb9b.png">
 
  
  ## Installation
