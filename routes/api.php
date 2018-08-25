@@ -26,7 +26,10 @@ Route::get('recent-packages', function (Request $request) {
 });
 
 Route::get('popular-packages', function (Request $request) {
-    return response()->json([
-        ['name' => 'Your Best Package Now!'],
-    ]);
+    $data = Cache::remember('tightenco-nova-packages::popular', 60, function () {
+        $response = Zttp::get('https://novapackages.com/api/popular');
+        return $response->json()['data'];
+    });
+
+    return response()->json($data);
 });
