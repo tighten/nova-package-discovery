@@ -17,7 +17,7 @@ composer require tightenco/nova-package-discovery
 Next, you must register the card with Nova. This is typically done in the `cards` method of the `NovaServiceProvider`.
 
 ```php
-// in app/Providers/NovaServiceProvder.php
+// in app/Providers/NovaServiceProvider.php
 
 // ...
 public function cards()
