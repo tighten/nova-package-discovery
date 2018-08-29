@@ -1,6 +1,6 @@
 {
     "name": "tightenco/nova-package-discovery",
-    "description": "A Laravel Nova card.",
+    "description": "Discover the newest and most popular Nova packages.",
     "keywords": [
         "laravel",
         "nova"
