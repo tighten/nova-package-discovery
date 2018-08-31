@@ -675,6 +675,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             recentPackages: [],
             popularPackages: [],
+            stats: {},
             tab: 'recent'
         };
     },
@@ -700,6 +701,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         Nova.request().get('/nova-vendor/nova-package-discovery/popular-packages').then(function (response) {
             _this.popularPackages = response.data;
+        });
+
+        Nova.request().get('/nova-vendor/nova-package-discovery/stats').then(function (response) {
+            _this.stats = response.data;
         });
     }
 });
@@ -853,13 +858,25 @@ var render = function() {
           staticClass: "mt-4"
         },
         [
-          _vm._v("\n            Number of packages: @todo"),
+          _vm._v(
+            "\n            Number of packages: " +
+              _vm._s(_vm.stats.package_count)
+          ),
           _c("br"),
-          _vm._v("\n            Total number of downloads: @todo"),
+          _vm._v(
+            "\n            Total number of downloads: " +
+              _vm._s(_vm.stats.packagist_download_count)
+          ),
           _c("br"),
-          _vm._v("\n            Total number of GitHub stars: @todo"),
+          _vm._v(
+            "\n            Total number of GitHub stars: " +
+              _vm._s(_vm.stats.github_star_count)
+          ),
           _c("br"),
-          _vm._v("\n            Latest version of Nova: @todo"),
+          _vm._v(
+            "\n            Latest version of Nova: " +
+              _vm._s(_vm.stats.nova_latest_version)
+          ),
           _c("br")
         ]
       )

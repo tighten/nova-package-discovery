@@ -33,3 +33,12 @@ Route::get('popular-packages', function (Request $request) {
 
     return response()->json($data);
 });
+
+Route::get('stats', function (Request $request) {
+    $data = Cache::remember('tightenco-nova-packages::stats', 60, function () {
+        $response = Zttp::get('https://novapackages.com/api/stats');
+        return $response->json();
+    });
+
+    return response()->json($data);
+});

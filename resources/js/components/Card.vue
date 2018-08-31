@@ -28,10 +28,10 @@
             </div>
 
             <div v-show="tab === 'stats'" class="mt-4">
-                Number of packages: @todo<br>
-                Total number of downloads: @todo<br>
-                Total number of GitHub stars: @todo<br>
-                Latest version of Nova: @todo<br>
+                Number of packages: {{ stats.package_count }}<br>
+                Total number of downloads: {{ stats.packagist_download_count }}<br>
+                Total number of GitHub stars: {{ stats.github_star_count }}<br>
+                Latest version of Nova: {{ stats.nova_latest_version }}<br>
             </div>
         </div>
     </card>
@@ -45,6 +45,7 @@ export default {
         return {
             recentPackages: [],
             popularPackages: [],
+            stats: {},
             tab: 'recent'
         };
     },
@@ -68,6 +69,10 @@ export default {
 
         Nova.request().get('/nova-vendor/nova-package-discovery/popular-packages').then(response => {
             this.popularPackages = response.data;
+        });
+
+        Nova.request().get('/nova-vendor/nova-package-discovery/stats').then(response => {
+            this.stats = response.data;
         });
     },
 }
