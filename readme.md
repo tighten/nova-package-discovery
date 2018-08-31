@@ -1,7 +1,6 @@
 # Nova Package Discovery package
 
-WE'RE DOING IT LIVE
- (on Twitch)
+Discover new packages! Check out the ten most recent and most popular packages on NovaPackages.com, and also check out some stats about the number of packages submitted and more.
  
 <img width="474" alt="image" src="https://user-images.githubusercontent.com/151829/44622253-14538480-a883-11e8-896c-55b08a5c1280.png">
 
