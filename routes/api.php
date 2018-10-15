@@ -1,9 +1,8 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Route;
-use Zttp\Zttp;
+use Tightenco\NovaPackageDiscovery\Http\Controllers\RecentPackagesController;
+use Tightenco\NovaPackageDiscovery\Http\Controllers\PopularPackagesController;
+use Tightenco\NovaPackageDiscovery\Http\Controllers\StatsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,29 +15,6 @@ use Zttp\Zttp;
 |
 */
 
-Route::get('recent-packages', function (Request $request) {
-    $data = Cache::remember('tightenco-nova-packages::recent', 60, function () {
-        $response = Zttp::get('https://novapackages.com/api/recent');
-        return $response->json()['data'];
-    });
-
-    return response()->json($data);
-});
-
-Route::get('popular-packages', function (Request $request) {
-    $data = Cache::remember('tightenco-nova-packages::popular', 60, function () {
-        $response = Zttp::get('https://novapackages.com/api/popular');
-        return $response->json()['data'];
-    });
-
-    return response()->json($data);
-});
-
-Route::get('stats', function (Request $request) {
-    $data = Cache::remember('tightenco-nova-packages::stats', 60, function () {
-        $response = Zttp::get('https://novapackages.com/api/stats');
-        return $response->json();
-    });
-
-    return response()->json($data);
-});
+Route::get('recent-packages', RecentPackagesController::class);
+Route::get('popular-packages', PopularPackagesController::class);
+Route::get('stats', StatsController::class);
