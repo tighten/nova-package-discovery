@@ -28,10 +28,10 @@
             </div>
 
             <div v-show="tab === 'stats'" class="mt-4">
-                Number of packages: {{ stats.package_count }}<br>
-                Total number of downloads: {{ stats.packagist_download_count }}<br>
-                Total number of GitHub stars: {{ stats.github_star_count }}<br>
-                Latest version of Nova: {{ stats.nova_latest_version }}<br>
+                <strong>Number of packages:</strong><br>{{ stats.package_count }}<br><br>
+                <strong>Total number of downloads:</strong><br>{{ stats.packagist_download_count }}<br><br>
+                <strong>Total number of GitHub stars:</strong><br>{{ stats.github_star_count }}<br><br>
+                <strong>Latest version of Nova:</strong><br>{{ stats.nova_latest_version }}<br>
             </div>
         </div>
     </card>

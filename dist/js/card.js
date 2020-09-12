@@ -734,7 +734,7 @@ var render = function() {
             on: {
               click: function($event) {
                 $event.preventDefault()
-                _vm.selectTab("recent")
+                return _vm.selectTab("recent")
               }
             }
           },
@@ -751,7 +751,7 @@ var render = function() {
             on: {
               click: function($event) {
                 $event.preventDefault()
-                _vm.selectTab("popular")
+                return _vm.selectTab("popular")
               }
             }
           },
@@ -768,7 +768,7 @@ var render = function() {
             on: {
               click: function($event) {
                 $event.preventDefault()
-                _vm.selectTab("stats")
+                return _vm.selectTab("stats")
               }
             }
           },
@@ -805,7 +805,8 @@ var render = function() {
                   _vm._v(_vm._s(_vm.humanTime(package.created_at)))
                 ])
               ])
-            })
+            }),
+            0
           )
         ]
       ),
@@ -839,7 +840,8 @@ var render = function() {
                   _vm._v(_vm._s(_vm.humanTime(package.created_at)))
                 ])
               ])
-            })
+            }),
+            0
           )
         ]
       ),
@@ -858,25 +860,27 @@ var render = function() {
           staticClass: "mt-4"
         },
         [
-          _vm._v(
-            "\n            Number of packages: " +
-              _vm._s(_vm.stats.package_count)
-          ),
+          _c("strong", [_vm._v("Number of packages:")]),
           _c("br"),
-          _vm._v(
-            "\n            Total number of downloads: " +
-              _vm._s(_vm.stats.packagist_download_count)
-          ),
+          _vm._v(_vm._s(_vm.stats.package_count)),
           _c("br"),
-          _vm._v(
-            "\n            Total number of GitHub stars: " +
-              _vm._s(_vm.stats.github_star_count)
-          ),
           _c("br"),
-          _vm._v(
-            "\n            Latest version of Nova: " +
-              _vm._s(_vm.stats.nova_latest_version)
-          ),
+          _vm._v(" "),
+          _c("strong", [_vm._v("Total number of downloads:")]),
+          _c("br"),
+          _vm._v(_vm._s(_vm.stats.packagist_download_count)),
+          _c("br"),
+          _c("br"),
+          _vm._v(" "),
+          _c("strong", [_vm._v("Total number of GitHub stars:")]),
+          _c("br"),
+          _vm._v(_vm._s(_vm.stats.github_star_count)),
+          _c("br"),
+          _c("br"),
+          _vm._v(" "),
+          _c("strong", [_vm._v("Latest version of Nova:")]),
+          _c("br"),
+          _vm._v(_vm._s(_vm.stats.nova_latest_version)),
           _c("br")
         ]
       )
